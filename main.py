@@ -26,9 +26,24 @@ def start():
     customer.request_book(eth, blockchain)
 
     #3
-    car = "Ferrari"
-    daily_price = 10
-    days_no = 3
+    
+    print("1.Honda Civic/n2.Ford Focus/n3.Tesla Model S /n")
+    vehicle = input("Choose your Vehicle (by entering the number):")
+    days = input("Mention number fo days car needs to be rented:")
+    if vehicle == "1":
+     car = "Honda Civic"
+     daily_price = 10
+     days_no = int(days)
+    elif vehicle == "2":
+     car = "Ford focus"
+     daily_price = 15
+     days_no = int(days)
+    elif vehicle == "3" :
+        car = "Tesla Model X"
+        daily_price = 20
+        days_no = int(days)
+
+      
     owner.add_car_to_rent(daily_price, car)
     customer.pass_number_of_days(days_no)
 
