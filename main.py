@@ -29,6 +29,7 @@ def start():
     user = input("Are you a 1. Owner or 2. Customer (Enter 1 or 2):" )
     days = input("Mention number for days car needs to be rented:")
     cars = {}
+    vehicles = []
     no_cars = input ("Enter the number of cars you want to add: " )
     number = int(no_cars)
     if user == "2": 
@@ -46,9 +47,10 @@ def start():
           owner.add_car_to_rent(daily_price, car)
           x = input( " Do you wanna add more car, yes or no : ")
 
-    
+     vehicles = list(cars.items())
     #print("1.Honda Civic \n2.Ford Focus\n3.Tesla Model S \n")
     print (cars)
+    print(vehicles)
     vehicle = input("Choose your Vehicle (by entering the number):")
          
          
