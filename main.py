@@ -27,22 +27,23 @@ def start():
 
     #3
     user = input("Enter yes if you want to add car:" )
-    
+    no_cars = input ("Enter the number of cars you want to add: " )
+    number = int(no_cars)
     cars = {"Honda Civic" : "10",
             "Ford Focus" : "15",
             "Tesla Model X" : "20"}
     #vehicles = []
-    no_cars = input ("Enter the number of cars you want to add: " )
-    number = int(no_cars)
+    
     if user == "yes": 
      x = "yes"
      print(x)
+     
      while (x == "yes") : 
           for i in range(number):
              car = input("Enter your car name:" )
              price  = input ("Enter rent of car per day:"  )
-             day_price = int(price)
-             cars[car.title()] = day_price
+             daily_price = int(price)
+             cars[car.title()] = daily_price
           # print("Enter Car details : ")  
            
            
@@ -58,10 +59,10 @@ def start():
     days = input("Mention number for days car needs to be rented:")     
     ssn = cars.get(vehicle)  
     car = vehicle
-    day_price = ssn
+    daily_price = ssn
     days_no = int(days)   
     
-    owner.add_car_to_rent(day_price, car)
+    owner.add_car_to_rent(daily_price, car)
     print("Details of car selected being added to smart contract" ,owner.add_car_to_rent)
     customer.pass_number_of_days(days_no)
          
@@ -84,7 +85,7 @@ def start():
     def show_rental_cost(cost):
           print("Rental cost of ", car ,"for " ,days, "days:", cost)
 
-    #show_rental_cost(day_price*days_no)
+    show_rental_cost(daily_price*days_no)
     show_final_balance(customer.balance, owner.balance)
 
 
