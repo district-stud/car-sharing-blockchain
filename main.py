@@ -6,14 +6,11 @@ def show_balance(cust_balance, owner_balance):
     print("Customer balance: %s" % (cust_balance,))
     print("Owner balance: %s" % (owner_balance,))
 
-def show_rental_cost(cost):
-    print("Rental cost: ", cost)
+
 
 def start():
     blockchain = Blockchain()
-    val = input("Enter your value: ")
-    val = int(val)
-    customer = Customer(val)
+    customer = Customer(500)
     owner = Owner(500)
     eth = 50
 
@@ -27,9 +24,9 @@ def start():
 
     #3
     
-    print("1.Honda Civic/n2.Ford Focus/n3.Tesla Model S /n")
+    print("1.Honda Civic \n2.Ford Focus\n3.Tesla Model S \n")
     vehicle = input("Choose your Vehicle (by entering the number):")
-    days = input("Mention number fo days car needs to be rented:")
+    days = input("Mention number for days car needs to be rented:")
     if vehicle == "1":
      car = "Honda Civic"
      daily_price = 10
@@ -60,6 +57,9 @@ def start():
     #7
     owner.withdraw_earnings()
     customer.retrieve_balance()
+
+    def show_rental_cost(cost):
+      print("Rental cost of ", car ,"for " ,days, ":", cost)
 
     show_rental_cost(daily_price*days_no)
     show_balance(customer.balance, owner.balance)
