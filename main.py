@@ -47,6 +47,10 @@ def start():
              days_no = int(days)
          else:
              print("Currently no more cars are available for rent. Sorry for the inconvinence")
+         owner.add_car_to_rent(daily_price, car)
+         print("Details of car selected being added to smart contract" ,owner.add_car_to_rent)
+         customer.pass_number_of_days(days_no)
+
     elif user == 2:  
         x = "yes"
         while (x == "yes") :  
@@ -55,14 +59,6 @@ def start():
            daily_price  = input ("Enter rent of car per day:"  )  
            owner.add_car_to_rent(daily_price, car)
            x = input( " Do you wanna add more car, yes or no : ")
-
-   
-
-
-      
-    #owner.add_car_to_rent(daily_price, car)
-    print("Details of car selected being added to smart contract" ,owner.add_car_to_rent)
-    customer.pass_number_of_days(days_no)
 
     #4
     owner.encrypt_and_store_details(blockchain)
