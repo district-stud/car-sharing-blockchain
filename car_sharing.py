@@ -22,7 +22,7 @@ class Owner:
         self.contract.allow_car_usage()
 
     def encrypt_and_store_details(self, blockchain):
-        blockchain.pending_transactions()
+        blockchain.mine()
         
 
 class Customer:

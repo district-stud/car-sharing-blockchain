@@ -57,7 +57,7 @@ class Blockchain:
         if last_block_hash != block.last_block_hash:
             return False
 
-        if not Blockchain.hash_validity_check(block, proof):
+        if not Blockchain.is_valid_proof(block, proof):
             return False
 
         block.hash = proof
@@ -85,12 +85,12 @@ class Blockchain:
 # Check if block_hash is valid hash of block and satisfies
 # the difficulty criteria.
     @classmethod
-    def hash_validity_check(cls, block, block_hash):
+    def is_valid_proof(cls, block, block_hash):
         return (block_hash.startswith('0' * Blockchain.difficulty) and
                 block_hash == block.hash_cal())
 
     @classmethod
-    def chain_validity_check(cls, chain):
+    def check_chain_validity(cls, chain):
         result = True
         last_block_hash = "0"
 
@@ -100,7 +100,7 @@ class Blockchain:
             # using `hash_cal` method.
             delattr(block, "hash")
 
-            if not cls.hash_validity_check(block, block_hash) or \
+            if not cls.is_valid_proof(block, block_hash) or \
                     last_block_hash != block.last_block_hash:
                 result = False
                 break
@@ -111,7 +111,7 @@ class Blockchain:
 # It is an  interface to add the pending
 # transactions_log to the blockchain by adding them to the block
 # and figuring out Proof Of Work.
-    def pending_transaction(self):
+    def mine(self):
         if not self.unconfirmed_transactions_log:
             return False
 
