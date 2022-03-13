@@ -2,10 +2,13 @@ from blockchain import Blockchain
 from car_sharing import Owner, Car, Customer
 
 
-def show_balance(cust_balance, owner_balance):
-    print("Customer balance: %s" % (cust_balance,))
-    print("Owner balance: %s" % (owner_balance,))
+def show_initial_balance(cust_balance, owner_balance):
+    print("Initial Customer balance: %s" % (cust_balance,))
+    print("Initial Owner balance: %s\n" % (owner_balance,))
 
+def show_final_balance(cust_balance, owner_balance):
+    print("Balance after transaction for Customer: %s" % (cust_balance,))
+    print("Balance after transaction for Owner: %s\n" % (owner_balance,))
 
 
 def start():
@@ -14,7 +17,7 @@ def start():
     owner = Owner(500)
     eth = 50
 
-    show_balance(customer.balance, owner.balance)
+    show_initial_balance(customer.balance, owner.balance)
 
     #1
     owner.deploy(eth, blockchain)
@@ -59,10 +62,10 @@ def start():
     customer.retrieve_balance()
 
     def show_rental_cost(cost):
-      print("Rental cost of ", car ,"for " ,days, ":", cost)
+      print("Rental cost of ", car ,"for " ,days, "days:", cost)
 
     show_rental_cost(daily_price*days_no)
-    show_balance(customer.balance, owner.balance)
+    show_final_balance(customer.balance, owner.balance)
 
 
 if __name__ == '__main__':
