@@ -45,12 +45,13 @@ def start():
 
       
     owner.add_car_to_rent(daily_price, car)
-    print(owner.add_car_to_rent)
+    print("Details of car selected being added to smart contract" ,owner.add_car_to_rent)
     customer.pass_number_of_days(days_no)
 
     #4
     owner.encrypt_and_store_details(blockchain)
     owner.allow_car_usage()
+    Car.access()
 
     #5
     customer.access_car()
