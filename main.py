@@ -27,7 +27,7 @@ def start():
 
     #3
     user = input("Are you a 1. Owner or 2. Customer (Enter 1 or 2):" )
-    if user == 2:
+    if user == 1:
          print("1.Honda Civic \n2.Ford Focus\n3.Tesla Model S \n")
          vehicle = input("Choose your Vehicle (by entering the number):")
          days = input("Mention number for days car needs to be rented:")
