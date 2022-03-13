@@ -26,18 +26,15 @@ def start():
     customer.request_book(eth, blockchain)
 
     #3
-    user = input("Enter yes if you want to add car:" )
+    user = input("enter yes if you want to add car:" )
     
-    cars = {"Honda Civic" : "10",
-            "Ford Focus" : "15",
-            "Tesla Model X" : "20"}
-    #vehicles = []
-    
+    cars = {}
+    vehicles = []
+    no_cars = input ("Enter the number of cars you want to add: " )
+    number = int(no_cars)
     if user == "yes": 
      x = "yes"
-     #print(x)
-     no_cars = input ("Enter the number of cars you want to add: " )
-     number = int(no_cars)
+     print(x)
      while (x == "yes") : 
           for i in range(number):
              car = input("Enter your car name:" )
@@ -54,7 +51,7 @@ def start():
      vehicles = list(cars.items())
     #print("1.Honda Civic \n2.Ford Focus\n3.Tesla Model S \n")
     print (cars)
-    #print(vehicles)
+    print(vehicles)
     vehicle = input("Choose your Vehicle (by entering the name):")
     days = input("Mention number for days car needs to be rented:")     
     ssn = cars.get(vehicle)  
