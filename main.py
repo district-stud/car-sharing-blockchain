@@ -38,7 +38,7 @@ def start():
             print("Enter Car details : ")  
             car = input("Enter your car name:" ) 
             daily_price  = input ("Enter rent of car per day:"  )
-            cars. append[car]  
+            cars. append(car)  
             owner.add_car_to_rent(daily_price, car)
             x = input( " Do you wanna add more car, yes or no : ")
     
