@@ -28,21 +28,28 @@ def start():
     #3
     user = input("Are you a 1. Owner or 2. Customer (Enter 1 or 2):" )
     days = input("Mention number for days car needs to be rented:")
-    cars = []
-    
-    if user == "2":  
+    cars = {}
+    no_cars = input ("Enter the number of cars you want to add: " )
+    number = int(no_cars)
+    if user == "2": 
+     
+     
      x = "yes"
      print(x)
-     while (x == "yes") :  
-           print("Enter Car details : ")  
-           car = input("Enter your car name:" ) 
-           daily_price  = input ("Enter rent of car per day:"  )
-           cars. append(car)  
-           owner.add_car_to_rent(daily_price, car)
-           x = input( " Do you wanna add more car, yes or no : ")
+     while (x == "yes") : 
+          for i in range(10):
+             car = input("Enter your car name:" )
+             daily_price  = input ("Enter rent of car per day:"  )
+             cars[car.title()] = daily_price
+          # print("Enter Car details : ")  
+           
+           
+          # cars. append(car)  
+          owner.add_car_to_rent(daily_price, car)
+          x = input( " Do you wanna add more car, yes or no : ")
 
     
-     #print("1.Honda Civic \n2.Ford Focus\n3.Tesla Model S \n")
+    #print("1.Honda Civic \n2.Ford Focus\n3.Tesla Model S \n")
     print (cars)
     vehicle = input("Choose your Vehicle (by entering the number):")
          
