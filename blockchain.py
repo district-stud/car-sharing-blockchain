@@ -27,7 +27,7 @@ class Block:
 
 class Blockchain:
 # Difficulty of our Proof of Work algorithm
-    difficulty = 4
+    difficulty = 3
 
     def __init__(self):
         self.unconfirmed_transactions = []
