@@ -26,13 +26,13 @@ def start():
     customer.request_book(eth, blockchain)
 
     #3
-    user = input("Are you a 1. Owner or 2. Customer (Enter 1 or 2):" )
+    user = input("enter yes if you want to add car:" )
     
     cars = {}
     vehicles = []
     no_cars = input ("Enter the number of cars you want to add: " )
     number = int(no_cars)
-    if user == "2": 
+    if user == "yes": 
      x = "yes"
      print(x)
      while (x == "yes") : 
@@ -45,7 +45,7 @@ def start():
            
            
           # cars. append(car)  
-          owner.add_car_to_rent(daily_price, car)
+          #owner.add_car_to_rent(daily_price, car)
           x = input( " Do you wanna add more car, yes or no : ")
 
      vehicles = list(cars.items())
