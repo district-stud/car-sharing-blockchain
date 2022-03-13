@@ -14,11 +14,11 @@ class Block:
         self.nonce = nonce
 
 # Computes hash to encode for the blockchain
-    def compute_hash(self):
-        return self.random_string()
+    def Calculate_hash(self):
+        return self.generate_random_string()
 
-# Function used by compute_hash
-    def random_string(self, starts_with='00', stringLength=8):
+# Function used by Calculate_hash
+    def generate_random_string(self, starts_with='00', stringLength=8):
         letters = string.ascii_lowercase
         hash = starts_with  + ''.join(random.choice(letters) for i in range(stringLength))
         print("Hash for the update" , hash)
@@ -37,7 +37,7 @@ class Blockchain:
 # Bulids a genesis block and appends it to the chain. The block has index 0, last_block_hash as 0, and a valid hash.
     def create_genesis_block(self):
         genesis_block = Block(0, [], 0, "0")
-        genesis_block.hash = genesis_block.compute_hash()
+        genesis_block.hash = genesis_block.Calculate_hash()
         self.chain.append(genesis_block)
         
 # Using getters and settors to make code better
@@ -69,10 +69,10 @@ class Blockchain:
     @staticmethod
     def proof_of_work(block):
         block.nonce = 0
-        computed_hash = block.compute_hash()
+        computed_hash = block.Calculate_hash()
         while not computed_hash.startswith('0' * Blockchain.difficulty):
             block.nonce += 1
-            computed_hash = block.compute_hash()
+            computed_hash = block.Calculate_hash()
 
         return computed_hash
 
@@ -87,7 +87,7 @@ class Blockchain:
     @classmethod
     def is_valid_proof(cls, block, block_hash):
         return (block_hash.startswith('0' * Blockchain.difficulty) and
-                block_hash == block.compute_hash())
+                block_hash == block.Calculate_hash())
 
     @classmethod
     def check_chain_validity(cls, chain):
@@ -97,7 +97,7 @@ class Blockchain:
         for block in chain:
             block_hash = block.hash
             # remove the hash field to recompute the hash again
-            # using `compute_hash` method.
+            # using `Calculate_hash` method.
             delattr(block, "hash")
 
             if not cls.is_valid_proof(block, block_hash) or \
