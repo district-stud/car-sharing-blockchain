@@ -27,10 +27,11 @@ class SmartContract:
 
     def add_booking_details(self, booking_details):
         self.booking_details = booking_details
+        print(booking_details)
 
     def get_booking_details(self):
         return self.booking_details
-        print(BookingDetails)
+    
 
     def end_car_rental(self):
         self.booking_details.get_car().end_rental()
