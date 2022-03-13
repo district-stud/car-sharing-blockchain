@@ -30,8 +30,9 @@ def start():
     days = input("Mention number for days car needs to be rented:")
 
     if user == 2:  
-        x = "yes"
-        while (x == "yes") :  
+     x = "yes"
+     print(x)
+     while (x == "yes") :  
            print("Enter Car details : ")  
            car = input("Enter your car name:" ) 
            daily_price  = input ("Enter rent of car per day:"  )  
