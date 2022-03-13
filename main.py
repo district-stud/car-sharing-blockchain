@@ -1,6 +1,6 @@
 from blockchain import Blockchain
 from car_sharing import Owner, Car, Customer
-
+from goto import goto, comefrom, label
 
 def show_initial_balance(cust_balance, owner_balance):
     print("Initial Customer balance: %s" % (cust_balance,))
@@ -41,6 +41,7 @@ def start():
             cars. append(car)  
             owner.add_car_to_rent(daily_price, car)
             x = input( " Do you wanna add more car, yes or no : ")
+            if x == "no": break
     
 
         elif user == "1":
