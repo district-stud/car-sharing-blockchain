@@ -12,6 +12,7 @@ def show_rental_cost(cost):
 def start():
     blockchain = Blockchain()
     val = input("Enter your value: ")
+    val = int(val)
     customer = Customer(val)
     owner = Owner(500)
     eth = 50
