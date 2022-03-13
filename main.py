@@ -29,7 +29,7 @@ def start():
     user = input("Are you a 1. Owner or 2. Customer (Enter 1 or 2):" )
     days = input("Mention number for days car needs to be rented:")
 
-    if user == 2:  
+    if user == "2":  
      x = "yes"
      print(x)
      while (x == "yes") :  
@@ -39,7 +39,7 @@ def start():
            owner.add_car_to_rent(daily_price, car)
            x = input( " Do you wanna add more car, yes or no : ")
 
-    elif user == 1:
+    elif user == "1":
          print("1.Honda Civic \n2.Ford Focus\n3.Tesla Model S \n")
          vehicle = input("Choose your Vehicle (by entering the number):")
          
