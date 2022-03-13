@@ -3,8 +3,9 @@ import time
 import random
 import string
 
-# Defines a single piece of theblockchain which are then stringed together
+# Defines a single piece of the blockchain which are then stringed together
 class Block:
+# To make an object and initialize it
     def __init__(self, index, transactions, timestamp, previous_hash, nonce=0):
         self.index = index
         self.transactions = transactions
@@ -16,7 +17,7 @@ class Block:
     def compute_hash(self):
         return self.random_string()
 
-#Function used by compute_hash
+# Function used by compute_hash
     def random_string(self, starts_with='00', stringLength=8):
         letters = string.ascii_lowercase
         hash = starts_with  + ''.join(random.choice(letters) for i in range(stringLength))
@@ -34,12 +35,13 @@ class Blockchain:
         self.chain = []
         self.create_genesis_block()
 
-# A function to generate genesis block and appends it to the chain. The block has index 0, previous_hash as 0, and a valid hash.
+# Bulids a genesis block and appends it to the chain. The block has index 0, previous_hash as 0, and a valid hash.
     def create_genesis_block(self):
         genesis_block = Block(0, [], 0, "0")
         genesis_block.hash = genesis_block.compute_hash()
         self.chain.append(genesis_block)
-
+        
+# Using getters and settors to make code better
     @property
     def last_block(self):
         return self.chain[-1]
