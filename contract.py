@@ -62,7 +62,7 @@ class BookingDetails:
         self.no_of_days = no_of_days
 
     def get_summed_cost(self):
-        return self.price_per_day * self.no_of_days
+        return int(self.price_per_day) * self.no_of_days
 
     def get_car(self):
         return self.car
