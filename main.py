@@ -42,8 +42,8 @@ def start():
           for i in range(number):
              car = input("Enter your car name:" )
              price  = input ("Enter rent of car per day:"  )
-             daily_price = int(price)
-             cars[car.title()] = daily_price
+             day_price = int(price)
+             cars[car.title()] = day_price
           # print("Enter Car details : ")  
            
            
@@ -59,10 +59,10 @@ def start():
     days = input("Mention number for days car needs to be rented:")     
     ssn = cars.get(vehicle)  
     car = vehicle
-    daily_price = ssn
+    day_price = ssn
     days_no = int(days)   
     
-    owner.add_car_to_rent(daily_price, car)
+    owner.add_car_to_rent(day_price, car)
     print("Details of car selected being added to smart contract" ,owner.add_car_to_rent)
     customer.pass_number_of_days(days_no)
          
@@ -85,7 +85,7 @@ def start():
     def show_rental_cost(cost):
           print("Rental cost of ", car ,"for " ,days, "days:", cost)
 
-    show_rental_cost(daily_price*days_no)
+    show_rental_cost(day_price*days_no)
     show_final_balance(customer.balance, owner.balance)
 
 
