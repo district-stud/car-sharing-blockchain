@@ -32,12 +32,10 @@ def start():
     no_cars = input ("Enter the number of cars you want to add: " )
     number = int(no_cars)
     if user == "2": 
-     
-     
      x = "yes"
      print(x)
      while (x == "yes") : 
-          for i in range(10):
+          for i in range(no_cars):
              car = input("Enter your car name:" )
              daily_price  = input ("Enter rent of car per day:"  )
              cars[car.title()] = daily_price
