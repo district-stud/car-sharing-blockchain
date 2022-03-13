@@ -32,12 +32,11 @@ def start():
             "Ford Focus" : "15",
             "Tesla Model X" : "20"}
     #vehicles = []
-    
+    no_cars = input ("Enter the number of cars you want to add: " )
+    number = int(no_cars)
     if user == "yes": 
      x = "yes"
-     #print(x)
-     no_cars = input ("Enter the number of cars you want to add: " )
-     number = int(no_cars)
+     print(x)
      while (x == "yes") : 
           for i in range(number):
              car = input("Enter your car name:" )
