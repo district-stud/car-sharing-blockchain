@@ -106,7 +106,7 @@ class Blockchain:
                 break
 
             block.hash, previous_hash = block_hash, block_hash
-
+        print("Checking chain validity:", result)
         return result
 # It is an interface to add the pending
 # transactions to the blockchain by adding them to the block
