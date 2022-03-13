@@ -21,7 +21,9 @@ class Block:
 
     def random_string(self, starts_with='00', stringLength=8):
         letters = string.ascii_lowercase
-        return starts_with  + ''.join(random.choice(letters) for i in range(stringLength))
+        hash = starts_with  + ''.join(random.choice(letters) for i in range(stringLength))
+        print(hash)
+        return hash
 
 
 
