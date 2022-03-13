@@ -26,22 +26,37 @@ def start():
     customer.request_book(eth, blockchain)
 
     #3
-    
-    print("1.Honda Civic \n2.Ford Focus\n3.Tesla Model S \n")
-    vehicle = input("Choose your Vehicle (by entering the number):")
-    days = input("Mention number for days car needs to be rented:")
-    if vehicle == "1":
-     car = "Honda Civic"
-     daily_price = 10
-     days_no = int(days)
-    elif vehicle == "2":
-     car = "Ford focus"
-     daily_price = 15
-     days_no = int(days)
-    elif vehicle == "3" :
-        car = "Tesla Model X"
-        daily_price = 20
-        days_no = int(days)
+    user = input("Are you a 1. Owner or 2. Customer (Enter 1 or 2):" )
+    if user == 2:
+         print("1.Honda Civic \n2.Ford Focus\n3.Tesla Model S \n")
+         vehicle = input("Choose your Vehicle (by entering the number):")
+         days = input("Mention number for days car needs to be rented:")
+         
+         if vehicle == "1":
+            car = "Honda Civic"
+            daily_price = 10
+            days_no = int(days)
+         elif vehicle == "2":
+             car = "Ford Focus"
+             daily_price = 15
+             days_no = int(days)
+         elif vehicle == "3" :
+             car = "Tesla Model X"
+             daily_price = 20
+             days_no = int(days)
+         else:
+             print("Currently no more cars are available for rent. Sorry for the inconvinence")
+    elif user == 2:  
+        x = "yes"
+        while (x == "yes") :  
+           print("Enter Car details : ")  
+           car = input("Enter your car name:" ) 
+           daily_price  = input ("Enter rent of car per day:"  )  
+           owner.add_car_to_rent(daily_price, car)
+           x = input( " Do you wanna add more car, yes or no : ")
+
+   
+
 
       
     owner.add_car_to_rent(daily_price, car)
@@ -51,7 +66,7 @@ def start():
     #4
     owner.encrypt_and_store_details(blockchain)
     owner.allow_car_usage()
-    Car.allow_to_use()
+    
 
     #5
     customer.access_car()
