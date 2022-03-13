@@ -59,7 +59,7 @@ def start():
 
 
       
-    owner.add_car_to_rent(daily_price, car)
+    #owner.add_car_to_rent(daily_price, car)
     print("Details of car selected being added to smart contract" ,owner.add_car_to_rent)
     customer.pass_number_of_days(days_no)
 
