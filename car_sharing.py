@@ -23,7 +23,7 @@ class Owner:
 
     def encrypt_and_store_details(self, blockchain):
         blockchain.mine()
-        print(blockchain)
+        
 
 class Customer:
     def __init__(self, balance):
