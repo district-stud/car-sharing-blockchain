@@ -41,51 +41,51 @@ def start():
            owner.add_car_to_rent(daily_price, car)
            x = input( " Do you wanna add more car, yes or no : ")
 
-    elif user == "1":
-         #print("1.Honda Civic \n2.Ford Focus\n3.Tesla Model S \n")
-         print (cars)
-         vehicle = input("Choose your Vehicle (by entering the number):")
+    
+     #print("1.Honda Civic \n2.Ford Focus\n3.Tesla Model S \n")
+    print (cars)
+    vehicle = input("Choose your Vehicle (by entering the number):")
          
          
-         if vehicle == "1":
+    if vehicle == "1":
             car = "Honda Civic"
             daily_price = 10
             days_no = int(days)
-         elif vehicle == "2":
+    elif vehicle == "2":
              car = "Ford Focus"
              daily_price = 15
              days_no = int(days)
-         elif vehicle == "3" :
+    elif vehicle == "3" :
              car = "Tesla Model X"
              daily_price = 20
              days_no = int(days)
-         else:
+    else:
              print("Currently no more cars are available for rent. Sorry for the inconvinence")
-         owner.add_car_to_rent(daily_price, car)
-         print("Details of car selected being added to smart contract" ,owner.add_car_to_rent)
-         customer.pass_number_of_days(days_no)
+    owner.add_car_to_rent(daily_price, car)
+    print("Details of car selected being added to smart contract" ,owner.add_car_to_rent)
+    customer.pass_number_of_days(days_no)
          
 
     #4
-         owner.encrypt_and_store_details(blockchain)
-         owner.allow_car_usage()
+    owner.encrypt_and_store_details(blockchain)
+    owner.allow_car_usage()
     
 
     #5
-         customer.access_car()
+    customer.access_car()
 
     #6
-         customer.end_car_rental()
+    customer.end_car_rental()
 
     #7
-         owner.withdraw_earnings()
-         customer.retrieve_balance()
+    owner.withdraw_earnings()
+    customer.retrieve_balance()
 
-         def show_rental_cost(cost):
+    def show_rental_cost(cost):
           print("Rental cost of ", car ,"for " ,days, "days:", cost)
 
-         show_rental_cost(daily_price*days_no)
-         show_final_balance(customer.balance, owner.balance)
+    show_rental_cost(daily_price*days_no)
+    show_final_balance(customer.balance, owner.balance)
 
 
 if __name__ == '__main__':
