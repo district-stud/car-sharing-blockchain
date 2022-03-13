@@ -45,6 +45,7 @@ def start():
 
       
     owner.add_car_to_rent(daily_price, car)
+    print(owner.add_car_to_rent)
     customer.pass_number_of_days(days_no)
 
     #4
