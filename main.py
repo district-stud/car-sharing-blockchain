@@ -84,7 +84,7 @@ def start():
     def show_rental_cost(cost):
           print("Rental cost of ", car ,"for " ,days, "days:", cost)
 
-    show_rental_cost(day_price*days_no)
+    #show_rental_cost(day_price*days_no)
     show_final_balance(customer.balance, owner.balance)
 
 
