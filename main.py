@@ -27,7 +27,7 @@ def start():
 
     #3
     user = input("Are you a 1. Owner or 2. Customer (Enter 1 or 2):" )
-    days = input("Mention number for days car needs to be rented:")
+    
     cars = {}
     vehicles = []
     no_cars = input ("Enter the number of cars you want to add: " )
@@ -51,23 +51,13 @@ def start():
     #print("1.Honda Civic \n2.Ford Focus\n3.Tesla Model S \n")
     print (cars)
     print(vehicles)
-    vehicle = input("Choose your Vehicle (by entering the number):")
-         
-         
-    if vehicle == "1":
-            car = "Honda Civic"
-            daily_price = 10
-            days_no = int(days)
-    elif vehicle == "2":
-             car = "Ford Focus"
-             daily_price = 15
-             days_no = int(days)
-    elif vehicle == "3" :
-             car = "Tesla Model X"
-             daily_price = 20
-             days_no = int(days)
-    else:
-             print("Currently no more cars are available for rent. Sorry for the inconvinence")
+    vehicle = input("Choose your Vehicle (by entering the name):")
+    days = input("Mention number for days car needs to be rented:")     
+    ssn = cars.get(vehicle)  
+    car = vehicle
+    daily_price = ssn
+    days_no = int(days)   
+    
     owner.add_car_to_rent(daily_price, car)
     print("Details of car selected being added to smart contract" ,owner.add_car_to_rent)
     customer.pass_number_of_days(days_no)
