@@ -23,6 +23,7 @@ class Owner:
 
     def encrypt_and_store_details(self, blockchain):
         blockchain.mine()
+        print(blockchain)
 
 class Customer:
     def __init__(self, balance):
@@ -55,10 +56,11 @@ class Car:
         self.allowed_to_use = False
 
     def access(self):
-        print("Car have been accessed")
+        print("Car access has been granted")
         self.is_rented = True
 
     def end_rental(self):
+        print("Car access has been terminated")
         self.is_rented = False
 
     def allow_to_use(self):
