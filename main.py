@@ -51,7 +51,7 @@ def start():
     #4
     owner.encrypt_and_store_details(blockchain)
     owner.allow_car_usage()
-    Car.access()
+    Car.allow_to_use()
 
     #5
     customer.access_car()
