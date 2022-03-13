@@ -38,7 +38,8 @@ def start():
      while (x == "yes") : 
           for i in range(number):
              car = input("Enter your car name:" )
-             daily_price  = input ("Enter rent of car per day:"  )
+             price  = input ("Enter rent of car per day:"  )
+             daily_price = int(price)
              cars[car.title()] = daily_price
           # print("Enter Car details : ")  
            
