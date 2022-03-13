@@ -27,7 +27,7 @@ class SmartContract:
 
     def add_booking_details(self, booking_details):
         self.booking_details = booking_details
-        print("Blockchain update with booking_details", booking_details)
+        print("Blockchain update with booking details", booking_details)
 
     def get_booking_details(self):
         return self.booking_details
